@@ -33,6 +33,33 @@ img {
     grid-area: content;
 }
 
+.contentPage {
+    display: grid;
+    grid-template-rows: 25% 1fr 1fr;
+    grid-template-columns: 160px 1fr 1fr;
+    grid-template-areas: "headerIMG navbar navbar" "headerIMG story story" "galleryIMG galleryIMG galleryImage";
+    padding: 5px 20px;
+}
+
+.headerImage {
+    grid-area: headerIMG;
+}
+
+.headerImage img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+.storyContent {
+    grid-area: story;
+}
+
+.galleryImages {
+    grid-area: galleryIMG;
+}
+
 #maps {
     grid-area: header;
     resize: vertical;
@@ -45,6 +72,11 @@ img {
 
 #sidebar {
     grid-area: sidebar;
+}
+
+.navbar {
+    grid-area: navbar;
+    position: relative;
 }
 
 #detailmap {
@@ -72,20 +104,37 @@ img {
 }
 
 .nav a {
-    font-size: 14pt;
+    font-size: 20pt;
     color: darkblue;
     text-decoration: none;
-    background: #eef;
     padding: 5px 15px;
     border-radius: 10px;
 }
 
 .navright {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.navright:before {
+    font-family: FontAwesome;
+    content: "\f105";
 }
 
 .navleft {
-    float: left;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.navleft:before {
+    font-family: FontAwesome;
+    content: "\f104";
+}
+
+.nav h1 {
+    text-align: center;
 }
 
 .nav-bottom {

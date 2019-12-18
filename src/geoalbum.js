@@ -7,8 +7,8 @@ function initGeoAlbum() {
     if (geoAlbumInitialized) return;
     geoAlbumInitialized = true;
 
-    var prevText = '&larr; Zurück';
-    var nextText = 'Weiter &rarr;';
+    var prevText = ' ';
+    var nextText = ' ';
     var detailZoom = 15;
     var overviewZoom = 10;
 
@@ -20,6 +20,7 @@ function initGeoAlbum() {
     var photoMarkers = {};
     var currentDetailLayer;
     var overviewMap, detailMap;
+    var sidebarContent = '';
 
     function process(page, idx) {
         // find all coordinates, also mark photos
@@ -69,9 +70,17 @@ function initGeoAlbum() {
         // Add navigation links
         var nav = '';
         if (idx > 1) nav += '<a class="navleft" href="#' + (+idx - 1) + '">' + prevText + '</a>';
+        var title = page.getElementsByTagName('h1');
+        nav += '<h1>' + title[0].innerHTML + '</h1>';
         if (idx < count) nav += '<a class="navright" href="#' + (+idx + 1) + '">' + nextText + '</a>';
         nav += '</div>';
-        page.innerHTML = '<div class="nav" id="sidebar">' + nav + '<div style="clear: both;"></div>' + page.innerHTML;
+        page.innerHTML = '<div class="nav navbar">' + nav + '<div style="clear: both;"></div>' + page.innerHTML;
+    }
+
+    function setSidebar(page, idx) {
+        var title = page.getElementsByTagName('h1');
+        console.log(title[0].innerHTML);
+        sidebarContent += '<a href="#' + idx + '">' + title[0].innerHTML + '</a><br />';
     }
 
     function zoomOnLayerGroup(map, layer) {
@@ -91,10 +100,14 @@ function initGeoAlbum() {
         if (d.nodeType == 1 && d.localName != 'script') pages[++count] = d;
         body.removeChild(d);
     }
-    for (var p in pages) process(pages[p], p);
+    for (var p in pages) {
+        process(pages[p], p);
+        setSidebar(pages[p], p);
+    };
+    console.log("p: " + p + ". pages: " + pages);
     // body.innerHTML = '<div id="content"></div><div id="maps"><div id="overviewmap"></div><div id="detailmap"></div></div>';
     body.innerHTML = '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
-    body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div></div>';
+    body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div></div>';
     content = document.getElementById('content');
     content.appendChild(document.createComment(''));
 
