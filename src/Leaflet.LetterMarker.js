@@ -5,10 +5,10 @@ L.LetterMarker = L.Marker.extend({
         letter: 'A',
         color: 'black',
         riseOnHover: true,
-        icon: new L.DivIcon({popupAnchor: [2, -2]})
+        icon: new L.DivIcon({ popupAnchor: [2, -2] })
     },
 
-    initialize: function( latlng, letter, options ) {
+    initialize: function(latlng, letter, options) {
         L.Marker.prototype.initialize.call(this, latlng, options);
         this.options.letter = letter;
     },
@@ -24,17 +24,17 @@ L.LetterMarker = L.Marker.extend({
             div.innerHTML = '' + options.letter + '';
             div.className = 'leaflet-marker-icon';
             div.style.marginLeft = '-7px';
-            div.style.marginTop  = '-7px';
-            div.style.width      = '15px';
-            div.style.height     = '15px';
+            div.style.marginTop = '-7px';
+            div.style.width = '15px';
+            div.style.height = '15px';
             div.style.borderRadius = '7px';
-            div.style.fontSize   = '10px';
+            div.style.fontSize = '10px';
             div.style.fontFamily = 'sans-serif';
             div.style.fontWeight = 'bold';
-            div.style.textAlign  = 'center';
+            div.style.textAlign = 'center';
             div.style.lineHeight = '15px';
-            div.style.cursor     = options.clickable ? 'hand' : 'default';
-            div.style.color      = 'white';
+            div.style.cursor = options.clickable ? 'hand' : 'default';
+            div.style.color = 'white';
             div.style.backgroundColor = options.color;
             this._icon = div;
 
@@ -57,8 +57,8 @@ L.LetterMarker = L.Marker.extend({
         panes.markerPane.appendChild(this._icon);
     },
 
-    setColor: function( color ) {
-        if( !this._icon )
+    setColor: function(color) {
+        if (!this._icon)
             this.options.color = color;
         else
             this._icon.style.backgroundColor = color;

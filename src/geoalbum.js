@@ -10,7 +10,7 @@ function initGeoAlbum() {
     var prevText = ' ';
     var nextText = ' ';
     var detailZoom = 15;
-    var overviewZoom = 10;
+    var overviewZoom = 6;
 
     var body = document.body;
     var pages = {};
@@ -20,9 +20,10 @@ function initGeoAlbum() {
     var photoMarkers = {};
     var currentDetailLayer;
     var overviewMap, detailMap;
-    var sidebarContent = '';
+    var sidebarContent = '<h1>Navigation</h1>';
 
     function process(page, idx) {
+        //console.log('prozess gestartet');
         // find all coordinates, also mark photos
         var lat = 0.0,
             lon = 0.0;
@@ -30,26 +31,37 @@ function initGeoAlbum() {
         var photoIdx = 0;
         var photoLayer = L.layerGroup();
         var children = page.childNodes;
+
         for (var i = 0; i < children.length; i++) {
+            //console.log('Schleife für ChildNodes gestartet.');
             var child = children[i];
-            if (child.nodeType != 1) continue;
-            var images = child.getElementsByTagName('img');
+            if (child.nodeType != 1) {
+                //console.log('continue');
+                continue
+            };
+            /*var images = child.getElementsByTagName('img');
             if (images.length > 0) {
                 child.className = 'div-p ' + child.className;
                 child.style.overflowX = 'auto';
-            }
-            if (child.hasAttribute('lat') && child.hasAttribute('lon')) {
+            }*/
+            if (child.hasAttribute('lat') && child.hasAttribute('lon') && child.classList.contains("headerImage")) {
+                //console.log('Bild hat Koordinaten!');
                 var plat = +child.getAttribute('lat');
                 var plon = +child.getAttribute('lon');
                 lat += plat;
                 lon += plon;
                 var letter = photoIdx++;
-                photoLayer.addLayer(L.letterMarker([plat, plon], letter, { clickable: false }));
+                photoLayer.addLayer(L.letterMarker([plat, plon], letter, { clickable: false, color: '#715a9c' }));
+                //console.log('Bild wurde der Karte hinzugefügt.');
+
                 var letterDiv = document.createElement('div');
                 letterDiv.className = 'photoidx';
                 //letterDiv.appendChild(document.createTextNode(letter));
-                letterDiv.appendChild(document.createTextNode(idx));
+                var nummerTag = document.createElement('p');
+                nummerTag.appendChild(document.createTextNode(idx));
+                letterDiv.appendChild(nummerTag);
                 child.insertBefore(letterDiv, child.firstChild);
+                //console.log('Bildernummerierung hinzugefügt');
             }
         }
         if (photoIdx > 0)
@@ -79,8 +91,8 @@ function initGeoAlbum() {
 
     function setSidebar(page, idx) {
         var title = page.getElementsByTagName('h1');
-        console.log(title[0].innerHTML);
-        sidebarContent += '<a href="#' + idx + '">' + title[0].innerHTML + '</a><br />';
+        //console.log(title[0].innerHTML);
+        sidebarContent += '<a href="#' + idx + '">' + title[0].innerHTML + '</a> ';
     }
 
     function zoomOnLayerGroup(map, layer) {
@@ -104,20 +116,22 @@ function initGeoAlbum() {
         process(pages[p], p);
         setSidebar(pages[p], p);
     };
-    console.log("p: " + p + ". pages: " + pages);
+    //console.log("p: " + p + ". pages: " + pages);
     // body.innerHTML = '<div id="content"></div><div id="maps"><div id="overviewmap"></div><div id="detailmap"></div></div>';
-    body.innerHTML = '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
+    body.innerHTML = '';
+    //body.innerHTML += '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
     body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div></div>';
     content = document.getElementById('content');
     content.appendChild(document.createComment(''));
 
-    var overviewMap = L.map('overviewmap', { keyboard: false, attributionControl: false }).setView([60, 30], overviewZoom);
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    var overviewMap = L.map('overviewmap', { keyboard: false, attributionControl: false }).setView([51.08342, 10.423447], overviewZoom);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
         maxZoom: 22,
         minZoom: 1
     }).addTo(overviewMap);
-    L.control.attribution({ position: 'bottomleft' }).addTo(overviewMap);
+    L.control.attribution({ position: 'topright' }).addTo(overviewMap);
     if (typeof overviewLayer != 'undefined')
         overviewMap.addLayer(overviewLayer);
     overviewMap.addLayer(pageMarkersLayer);
@@ -143,7 +157,7 @@ function initGeoAlbum() {
         // if (overviewMap && detailMap) {
         if (overviewMap) {
             pageMarkersLayer.eachLayer(function(m) {
-                m.setColor(m.options.letter == page ? 'blue' : 'black');
+                m.setColor(m.options.letter == page ? '#0b6f32' : '#715a9c');
                 if (m.options.letter == page)
                     overviewMap.panTo(m.getLatLng());
             });
@@ -170,7 +184,7 @@ function initGeoAlbum() {
 L.LetterMarker = L.Marker.extend({
     options: {
         letter: 'A',
-        color: 'black',
+        color: '#715a9c',
         riseOnHover: true,
         icon: new L.DivIcon({ popupAnchor: [2, -2] })
     },

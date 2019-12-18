@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Girassol|Inria+Serif|Roboto&display=swap" rel="stylesheet">
 
     <!--Leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
@@ -19,84 +19,183 @@
     <script type="text/javascript" src="src/Leaflet.LetterMarker.js"></script>
     <script type="text/javascript" src="src/geoalbum.js"></script>
 
-
+    <!--Featherlight lightbox -->
+    <link type="text/css" rel="stylesheet" href="src/featherlight/featherlight.css" />
+    <link type="text/css" rel="stylesheet" href="src/featherlight/featherlight.gallery.css" />
 </head>
 
 <body>
 
-
-
-
     <div class="contentPage">
-        <h1>Opening slide</h1>
-        <p>Hello and welcome to my photo album!</p>
-        <p>Change pages by pressing arrow buttons on keyboard, or by clicking relevant links on top and bottom. The map to the right shows page locations, you can click on numbers to open a page for that location. All images can be opened in bigger size
-            by clicking on them.</p>
-    </div>
-
-    <div class="contentPage">
-        <div class="headerImage">
-            <div lat="60.667533" lon="30.03332">
-                <a href="https://dummyimage.com/300/09f/fff.png" data-fslightbox><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
-            </div>
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
             <section class="datum">26.07.2020</section>
             <section class="autor">Laura</section>
         </div>
         <div class="storyContent">
-            <h1 style="display:none;">The first photo</h1>
+            <h1 style="display:none;">Intro</h1>
             <p>This is first two photos I took on my trip.</p>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                 no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="galleryImages">
-            <a href="https://dummyimage.com/300/09f/fff.png" data-fslightbox="second-lightbox"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-fslightbox="first-lightbox"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-fslightbox="second-lightbox"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-fslightbox="first-lightbox"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a="gallery" href="https://i.imgur.com/fsyrScY.jpg">
+                Open first slide (image)
+                </a>
+                <a="gallery" href="https://www.youtube.com/watch?v=xshEZzpS4CQ">
+                    Open second slide (YouTube)
+                    </a>
+        </div>
+    </div>
+
+    <div class="contentPage">
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <section class="datum">26.07.2020</section>
+            <section class="autor">Laura</section>
+        </div>
+        <div class="storyContent">
+            <h1 style="display:none;">1</h1>
+            <p>This is first two photos I took on my trip.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="galleryImages">
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
     </div>
 
 
     <div class="contentPage">
-        <h1>Мост через Вуоксу</h1>
-        <div lat="60.682305" lon="30.008729">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <section class="datum">26.07.2020</section>
+            <section class="autor">Laura</section>
         </div>
-        <p>Северная часть растёт на глазах: сравните с <a href="http://spb-projects.ru/forum/viewtopic.php?p=161274#161274">фотографиями</a> от апреля и 9 мая. Проезд под железной дорогой зарыт:</p>
-        <div lat="60.682757" lon="30.008143">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
+        <div class="storyContent">
+            <h1 style="display:none;">2</h1>
+            <p>This is first two photos I took on my trip.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
-        <p>Подъезд к станции подвинули, теперь нужно проходить под высокой стеной.</p>
-        <div lat="60.683085" lon="30.007347">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
+        <div class="galleryImages">
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
-        <p>С другой стороны подъезда стоит жилой дом. За ним возводят ещё один фрагмент моста. По клике на уменьшенную картинку откроется другая фотография, вблизи структуры:
-            <p>
-                <div lat="60.683741" lon="30.006341">
-                    <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
-                </div>
-                <p>Со стороны станции &laquo;Лосево&raquo; она выглядит так:</p>
-                <div lat="60.684849" lon="30.004582">
-                    <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
-                </div>
     </div>
 
     <div class="contentPage">
-        <h1>Opening slide</h1>
-        <p>Hello and welcome to my photo album!</p>
-        <p>Change pages by pressing arrow buttons on keyboard, or by clicking relevant links on top and bottom. The map to the right shows page locations, you can click on numbers to open a page for that location. All images can be opened in bigger size
-            by clicking on them.</p>
-    </div>>
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <section class="datum">26.07.2020</section>
+            <section class="autor">Laura</section>
+        </div>
+        <div class="storyContent">
+            <h1 style="display:none;">3</h1>
+            <p>This is first two photos I took on my trip.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="galleryImages">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+        </div>
+    </div>
 
 
-    <!-- baguettebox-->
+    <div class="contentPage">
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <section class="datum">26.07.2020</section>
+            <section class="autor">Laura</section>
+        </div>
+        <div class="storyContent">
+            <h1 style="display:none;">4</h1>
+            <p>This is first two photos I took on my trip.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="galleryImages">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+        </div>
+    </div>
 
-    <script src="src/fslightbox.js"></script>
+    <div class="contentPage">
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <section class="datum">26.07.2020</section>
+            <section class="autor">Laura</section>
+        </div>
+        <div class="storyContent">
+            <h1 style="display:none;">5</h1>
+            <p>This is first two photos I took on my trip.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="galleryImages">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+        </div>
+    </div>
+
+    <div class="contentPage">
+        <div class="headerImage" lat="51.049329" lon="13.738144">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <section class="datum">26.07.2020</section>
+            <section class="autor">Laura</section>
+        </div>
+        <div class="storyContent">
+            <h1 style="display:none;">6</h1>
+            <p>This is first two photos I took on my trip.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="galleryImages">
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+        </div>
+    </div>
+
+    <script src="src/featherlight/jquery-1.7.0.min.js"></script>
+    <script src="src/featherlight/featherlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="src/featherlight/featherlight.gallery.js" type="text/javascript" charset="utf-8"></script>
+
 
     <script>
-        fsLightboxInstances['third-lightbox'].open(0);
-        fsLightboxInstances['second-lightbox'].props.onOpen = () => console.log('Lightbox open!');
+        $(document).ready(function() {
+            var galerie = $('.galleryImages a');
+            console.log(galerie);
+            galerie.featherlightGallery({
+                previousIcon: '&#9664;',
+                /* Code that is used as previous icon */
+                nextIcon: '&#9654;',
+                /* Code that is used as next icon */
+                galleryFadeIn: 100,
+                /* fadeIn speed when slide is loaded */
+                galleryFadeOut: 300 /* fadeOut speed before slide is loaded */
+            });
+        });
     </script>
 </body>
 
