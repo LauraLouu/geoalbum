@@ -35,6 +35,12 @@ img {
 
 #maps {
     grid-area: header;
+    resize: vertical;
+    overflow: auto;
+}
+
+#maps::-webkit-resizer- {
+    background-color: red;
 }
 
 #sidebar {

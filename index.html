@@ -7,8 +7,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Featherlight-->
+    <link rel="stylesheet" href="featherlight/featherlight.css" />
+    <link rel="stylesheet" href="featherlight/featherlight.gallery.css" />
 
     <!--Leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
@@ -35,14 +36,15 @@
     </div>
 
     <div>
+
         <h1>The first photo</h1>
         <div lat="60.667533" lon="30.03332">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
+            <a data-featherlight="https://dummyimage.com/300/09f/fff.png" data-caption="caption 1" href="#"><img src="https://dummyimage.com/300/09f/fff.png"></a>
         </div>
         <p>This is first two photos I took on my trip.</p>
-        <div lat="60.667636" lon="30.033235">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png"></a>
-        </div>
+        <a class="gallery" href="https://dummyimage.com/300/09f/fff.png" data-caption="caption 2" href="#"><img src="https://dummyimage.com/100/09f/fff.png"></a>
+        <a class="gallery" href="https://dummyimage.com/300/09f/fff.png" data-caption="caption 3" href="#"><img src="https://dummyimage.com/100/09f/fff.png"></a>
+
     </div>
 
 
@@ -76,6 +78,16 @@
         <p>Change pages by pressing arrow buttons on keyboard, or by clicking relevant links on top and bottom. The map to the right shows page locations, you can click on numbers to open a page for that location. All images can be opened in bigger size
             by clicking on them.</p>
     </div>
+
+    <!--Featherlight-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="featherlight/featherlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="featherlight/featherlight.gallery.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(document).ready(function() {
+            $('.gallery').featherlightGallery();
+        });
+    </script>
 </body>
 
 </html>

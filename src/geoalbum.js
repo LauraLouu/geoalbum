@@ -98,12 +98,13 @@ function initGeoAlbum() {
     content = document.getElementById('content');
     content.appendChild(document.createComment(''));
 
-    var overviewMap = L.map('overviewmap', { keyboard: false }).setView([60, 30], overviewZoom);
-    L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors',
+    var overviewMap = L.map('overviewmap', { keyboard: false, attributionControl: false }).setView([60, 30], overviewZoom);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
         maxZoom: 22,
         minZoom: 1
     }).addTo(overviewMap);
+    L.control.attribution({ position: 'bottomleft' }).addTo(overviewMap);
     if (typeof overviewLayer != 'undefined')
         overviewMap.addLayer(overviewLayer);
     overviewMap.addLayer(pageMarkersLayer);
