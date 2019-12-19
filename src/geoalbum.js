@@ -124,7 +124,10 @@ function initGeoAlbum() {
     body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div><div id="footer"></div></div>';
 
     footer = document.getElementById('footer');
-    footer.innerHTML = '<section>Storymap by <a target="_blank" href="https://www.laura-lou.com">LauraLou</a></section> <section>Storymap-Plugin by <a href="https://github.com/Zverik/geoalbum" target="_blank">Zverik (Geoalbum)</a></section><section>Lightbox by <a href="https://noelboss.github.io/featherlight/" target="_blank"> Featherlight</section>';
+    footerContent = '<section>Storymap by <a target="_blank" href="https://www.laura-lou.com">LauraLou</a></section>';
+    footerContent += '<section>Storymap-Plugin by <a href="https://github.com/Zverik/geoalbum" target="_blank">Zverik (Geoalbum)</a></section>';
+    footerContent += '<section><a href="#" data-featherlight="src/LeafletPlugins.html" >Weitere Plugins</a></section>';
+    footer.innerHTML = footerContent;
 
     content = document.getElementById('content');
     content.appendChild(document.createComment(''));
@@ -138,25 +141,18 @@ function initGeoAlbum() {
     }).addTo(overviewMap);
     L.control.attribution({ position: 'topright' }).addTo(overviewMap);
 
-    var dash_straight = {
+    var flight = {
         color: 'rgb(145, 146, 150)',
         fillColor: 'rgb(145, 146, 150)',
-        dashArray: 8,
         opacity: 0.8,
-        weight: '1',
+        weight: '2',
+        steps: 6
     };
 
-    L.bezier({
-        path: [
-            [
-                { lat: 50.0342, lng: 8.55361 }, //FRA
-                { lat: -37.0079, lng: 174.788 }, //AUC
-            ]
-        ],
-        icon: {
-            path: "img/plane.png"
-        }
-    }, dash_straight).addTo(overviewMap);
+    const FRA = { lat: 50.0342, lng: 8.55361 }; //FRA
+    const AUC = { lat: -37.0079, lng: 174.788 }; //AUC
+
+    const geodesicLine = new L.Geodesic([FRA, AUC], flight).addTo(overviewMap);
 
     if (typeof overviewLayer != 'undefined')
         overviewMap.addLayer(overviewLayer);
