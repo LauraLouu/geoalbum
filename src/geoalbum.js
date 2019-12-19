@@ -49,9 +49,9 @@ function initGeoAlbum() {
                 //console.log('Bild hat Koordinaten!');
                 var plat = +child.getAttribute('lat');
                 var plon = +child.getAttribute('lon');
-                lat += plat;
-                lon += plon;
-                console.log('Lat: ' + plat + ', Lon: ' + plon);
+                lat = parseFloat(plat);
+                lon = parseFloat(plon);
+                console.log(idx + '|| Lat: ' + lat + ', Lon: ' + lon);
                 var letter = photoIdx++;
                 photoLayer.addLayer(L.letterMarker([plat, plon], letter, { clickable: false, color: '#715a9c' }));
                 //console.log('Bild wurde der Karte hinzugefügt.');
