@@ -51,6 +51,7 @@ function initGeoAlbum() {
                 var plon = +child.getAttribute('lon');
                 lat += plat;
                 lon += plon;
+                console.log('Lat: ' + plat + ', Lon: ' + plon);
                 var letter = photoIdx++;
                 photoLayer.addLayer(L.letterMarker([plat, plon], letter, { clickable: false, color: '#715a9c' }));
                 //console.log('Bild wurde der Karte hinzugefügt.');
@@ -142,10 +143,10 @@ function initGeoAlbum() {
     L.control.attribution({ position: 'topright' }).addTo(overviewMap);
 
     var flight = {
-        color: 'rgb(145, 146, 150)',
+        color: '#588157',
         fillColor: 'rgb(145, 146, 150)',
         opacity: 0.8,
-        weight: '2',
+        weight: 4,
         steps: 6
     };
 
@@ -181,7 +182,10 @@ function initGeoAlbum() {
             pageMarkersLayer.eachLayer(function(m) {
                 m.setColor(m.options.letter == page ? '#0b6f32' : '#715a9c');
                 if (m.options.letter == page)
-                    overviewMap.panTo(m.getLatLng());
+                //overviewMap.panTo(m.getLatLng());
+                    overviewMap.flyTo(m.getLatLng(), 10, {
+                    animate: true
+                });
             });
             /* if (currentDetailLayer)
                  detailMap.removeLayer(currentDetailLayer);
@@ -196,7 +200,7 @@ function initGeoAlbum() {
         }
 
         var galerien = $("a[class^='gallery']");
-        console.log(galerien);
+        // console.log(galerien);
         galerien.featherlightGallery({
             previousIcon: '<i class="fa fa-arrow-circle-left fa-lg"></i>',
             /* Code that is used as previous icon */
