@@ -181,14 +181,21 @@ function initGeoAlbum() {
         var galerien = $("a[class^='gallery']");
         console.log(galerien);
         galerien.featherlightGallery({
-            previousIcon: '&#9664;',
+            previousIcon: '<i class="fa fa-arrow-circle-left fa-lg"></i>',
             /* Code that is used as previous icon */
-            nextIcon: '&#9654;',
+            nextIcon: '<i class="fa fa-arrow-circle-right fa-lg"></i>',
             /* Code that is used as next icon */
             galleryFadeIn: 100,
             /* fadeIn speed when slide is loaded */
             galleryFadeOut: 300 /* fadeOut speed before slide is loaded */
         });
+
+        $.featherlightGallery.prototype.afterContent = function() {
+            debugger
+            var caption = this.$currentTarget.find('img').attr('alt');
+            this.$instance.find('.caption').remove();
+            $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
+        };
     }();
 
     document.onkeydown = function(e) {
