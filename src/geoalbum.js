@@ -137,6 +137,27 @@ function initGeoAlbum() {
         minZoom: 1
     }).addTo(overviewMap);
     L.control.attribution({ position: 'topright' }).addTo(overviewMap);
+
+    var dash_straight = {
+        color: 'rgb(145, 146, 150)',
+        fillColor: 'rgb(145, 146, 150)',
+        dashArray: 8,
+        opacity: 0.8,
+        weight: '1',
+    };
+
+    L.bezier({
+        path: [
+            [
+                { lat: 50.0342, lng: 8.55361 }, //FRA
+                { lat: -37.0079, lng: 174.788 }, //AUC
+            ]
+        ],
+        icon: {
+            path: "img/plane.png"
+        }
+    }, dash_straight).addTo(overviewMap);
+
     if (typeof overviewLayer != 'undefined')
         overviewMap.addLayer(overviewLayer);
     overviewMap.addLayer(pageMarkersLayer);
