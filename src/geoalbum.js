@@ -16,6 +16,7 @@ function initGeoAlbum() {
     var pages = {};
     var page;
     var content;
+    var footer;
     var pageMarkersLayer = L.layerGroup();
     var photoMarkers = {};
     var currentDetailLayer;
@@ -120,7 +121,11 @@ function initGeoAlbum() {
     // body.innerHTML = '<div id="content"></div><div id="maps"><div id="overviewmap"></div><div id="detailmap"></div></div>';
     body.innerHTML = '';
     //body.innerHTML += '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
-    body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div></div>';
+    body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div><div id="footer"></div></div>';
+
+    footer = document.getElementById('footer');
+    footer.innerHTML = '<section>Storymap by <a href="https://www.laura-lou.com">LauraLou</a></section> <section>Storymap-Plugin by <a href="https://github.com/Zverik/geoalbum" target="_blank">Zverik (Geoalbum)</a></section><section>Lightbox by <a href="https://noelboss.github.io/featherlight/" target="_blank"> Featherlight</section>';
+
     content = document.getElementById('content');
     content.appendChild(document.createComment(''));
 
@@ -172,6 +177,18 @@ function initGeoAlbum() {
              } else
                  document.getElementById('detailmap').style.visibility = 'hidden';*/
         }
+
+        var galerien = $("a[class^='gallery']");
+        console.log(galerien);
+        galerien.featherlightGallery({
+            previousIcon: '&#9664;',
+            /* Code that is used as previous icon */
+            nextIcon: '&#9654;',
+            /* Code that is used as next icon */
+            galleryFadeIn: 100,
+            /* fadeIn speed when slide is loaded */
+            galleryFadeOut: 300 /* fadeOut speed before slide is loaded */
+        });
     }();
 
     document.onkeydown = function(e) {

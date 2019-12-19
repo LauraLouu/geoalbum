@@ -14,21 +14,27 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 
+    <!--Featherlight lightbox -->
+    <link type="text/css" rel="stylesheet" href="src/featherlight/featherlight.css" />
+    <link type="text/css" rel="stylesheet" href="src/featherlight/featherlight.gallery.css" />
+    <script src="src/featherlight/jquery-1.7.0.min.js"></script>
+    <script src="src/featherlight/featherlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="src/featherlight/featherlight.gallery.js" type="text/javascript" charset="utf-8"></script>
+
     <!--Geoalbum-->
     <link rel="stylesheet" href="src/geoalbum.css">
     <script type="text/javascript" src="src/Leaflet.LetterMarker.js"></script>
     <script type="text/javascript" src="src/geoalbum.js"></script>
 
-    <!--Featherlight lightbox -->
-    <link type="text/css" rel="stylesheet" href="src/featherlight/featherlight.css" />
-    <link type="text/css" rel="stylesheet" href="src/featherlight/featherlight.gallery.css" />
+
+
 </head>
 
 <body>
 
     <div class="contentPage">
         <div class="headerImage" lat="51.049329" lon="13.738144">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <a data-featherlight href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
             <section class="datum">26.07.2020</section>
             <section class="autor">Laura</section>
         </div>
@@ -40,10 +46,10 @@
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="galleryImages">
-            <a="gallery" href="https://i.imgur.com/fsyrScY.jpg">
+            <a class="gallery0" href="https://i.imgur.com/fsyrScY.jpg">
                 Open first slide (image)
                 </a>
-                <a="gallery" href="https://www.youtube.com/watch?v=xshEZzpS4CQ">
+            <a class="gallery0" href="https://www.youtube.com/watch?v=xshEZzpS4CQ">
                     Open second slide (YouTube)
                     </a>
         </div>
@@ -51,7 +57,7 @@
 
     <div class="contentPage">
         <div class="headerImage" lat="51.049329" lon="13.738144">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <a data-featherlight href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
             <section class="datum">26.07.2020</section>
             <section class="autor">Laura</section>
         </div>
@@ -63,17 +69,17 @@
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="galleryImages">
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight class="gallery"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/100/09f/fff.png" class="gallery1"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/100/09f/fff.png" class="gallery1"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/100/09f/fff.png" class="gallery1"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/100/09f/fff.png" class="gallery1"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
     </div>
 
 
     <div class="contentPage">
         <div class="headerImage" lat="51.049329" lon="13.738144">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
+            <a data-featherlight href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
             <section class="datum">26.07.2020</section>
             <section class="autor">Laura</section>
         </div>
@@ -85,10 +91,10 @@
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="galleryImages">
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png" data-featherlight-gallery="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/200/09f/fff.png" class="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/200/09f/fff.png" class="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a href="https://dummyimage.com/200/09f/fff.png" class="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a href="https://dummyimage.com/200/09f/fff.png" class="gallery2"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
     </div>
 
@@ -106,10 +112,10 @@
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="galleryImages">
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
-            <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a class="gallery3" href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a class="gallery3" href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
+            <a class="gallery3" href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
+            <a class="gallery3" href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
     </div>
 
@@ -176,27 +182,6 @@
             <a href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
     </div>
-
-    <script src="src/featherlight/jquery-1.7.0.min.js"></script>
-    <script src="src/featherlight/featherlight.js" type="text/javascript" charset="utf-8"></script>
-    <script src="src/featherlight/featherlight.gallery.js" type="text/javascript" charset="utf-8"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            var galerie = $('.galleryImages a');
-            console.log(galerie);
-            galerie.featherlightGallery({
-                previousIcon: '&#9664;',
-                /* Code that is used as previous icon */
-                nextIcon: '&#9654;',
-                /* Code that is used as next icon */
-                galleryFadeIn: 100,
-                /* fadeIn speed when slide is loaded */
-                galleryFadeOut: 300 /* fadeOut speed before slide is loaded */
-            });
-        });
-    </script>
 </body>
 
 </html>
