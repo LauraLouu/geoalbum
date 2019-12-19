@@ -1,3 +1,5 @@
+/*https://coolors.co/0b6f32-eae9e3-a3b18a-6e4178-588157*/
+
 html,
 body {
     height: 100%;
@@ -23,7 +25,7 @@ img {
     height: 100vh;
     display: grid;
     grid-template-rows: 300px 1fr 100px;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 35% 25% 25% 15%;
     grid-template-areas: "header header header header" "content content content sidebar" "footer footer footer footer";
 }
 
@@ -47,7 +49,7 @@ img {
 
 #footer section a {
     text-decoration: none;
-    color: #715a9c;
+    color: #6e4178;
 }
 
 #footer section a:hover {
@@ -85,6 +87,26 @@ img {
 .storyContent {
     grid-area: story;
     margin: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.deutsch,
+.englisch {
+    grid-row: 1;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+.deutsch {
+    grid-column: 1 / 2;
+    border-right: 1px solid #6e4178;
+}
+
+.englisch {
+    grid-column: 2 / 3;
+    border-left: 1px solid #6e4178;
 }
 
 .galleryImages {
@@ -100,15 +122,16 @@ img {
 
 #sidebar {
     grid-area: sidebar;
-    background-color: #eae9e3;
+    background-color: #eee;
     padding: 20px;
+    border-radius: 0 0 0 5px;
 }
 
 #sidebar a {
     font-size: 12pt;
     text-decoration: none;
     margin: 5px 0;
-    color: #715a9c;
+    color: #6e4178;
     padding: 5px;
     border-radius: 5px;
     background-color: #fff;
@@ -122,6 +145,7 @@ img {
 .navbar {
     grid-area: navbar;
     position: relative;
+    margin: 0 30px;
 }
 
 #detailmap {
@@ -142,7 +166,7 @@ img {
     width: 25px;
     height: 25px;
     color: white;
-    background-color: #715a9c;
+    background-color: #6e4178;
     border-radius: 50%;
     opacity: 0.6;
 }
