@@ -28,7 +28,7 @@ function initGeoAlbum() {
         // find all coordinates, also mark photos
         var lat = 0.0,
             lon = 0.0;
-        var photoIndices = 'ABCDEFGHIJKLMN';
+        //var photoIndices = 'ABCDEFGHIJKLMN';
         var photoIdx = 0;
         var photoLayer = L.layerGroup();
         var children = page.childNodes;
@@ -76,7 +76,7 @@ function initGeoAlbum() {
             lat /= photoIdx;
             lon /= photoIdx;
         }
-        if (lat > 0) {
+        if (lat !== 0) {
             pageMarkersLayer.addLayer(L.letterMarker([lat, lon], idx)
                 .on('click', function() { window.location.hash = idx }));
         }

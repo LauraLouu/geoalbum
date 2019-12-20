@@ -16,6 +16,12 @@ h1 {
     font-weight: normal;
 }
 
+.storyContent h2,
+.storyContent h3,
+.storyContent h4 {
+    font-family: 'Girassol', cursive;
+}
+
 img {
     border: 0;
 }
