@@ -16,6 +16,7 @@ function initGeoAlbum() {
     var pages = {};
     var page;
     var content;
+    var TitleContent;
     var footer;
     var pageMarkersLayer = L.layerGroup();
     var photoMarkers = {};
@@ -32,6 +33,9 @@ function initGeoAlbum() {
         var photoIdx = 0;
         var photoLayer = L.layerGroup();
         var children = page.childNodes;
+
+        var title = page.getElementsByTagName('h1');
+        TitleContent = title[0].innerHTML;
 
         for (var i = 0; i < children.length; i++) {
             //console.log('Schleife für ChildNodes gestartet.');
@@ -51,7 +55,7 @@ function initGeoAlbum() {
                 var plon = +child.getAttribute('lon');
                 lat = parseFloat(plat);
                 lon = parseFloat(plon);
-                console.log(idx + '|| Lat: ' + lat + ', Lon: ' + lon);
+                //console.log(idx + '|| Lat: ' + lat + ', Lon: ' + lon);
                 var letter = photoIdx++;
                 photoLayer.addLayer(L.letterMarker([plat, plon], letter, { clickable: false, color: '#715a9c' }));
                 //console.log('Bild wurde der Karte hinzugefügt.');
@@ -77,15 +81,20 @@ function initGeoAlbum() {
             lon /= photoIdx;
         }
         if (lat !== 0) {
-            pageMarkersLayer.addLayer(L.letterMarker([lat, lon], idx)
-                .on('click', function() { window.location.hash = idx }));
+            pageMarkersLayer.addLayer(
+                L.letterMarker([lat, lon], idx)
+                .on('click', function() { window.location.hash = idx })
+                .bindTooltip(TitleContent)
+            );
         }
 
         // Add navigation links
+
+
+
         var nav = '';
         if (idx > 1) nav += '<a class="navleft" href="#' + (+idx - 1) + '">' + prevText + '</a>';
-        var title = page.getElementsByTagName('h1');
-        nav += '<h1>' + title[0].innerHTML + '</h1>';
+        nav += '<h1>' + TitleContent + '</h1>';
         if (idx < count) nav += '<a class="navright" href="#' + (+idx + 1) + '">' + nextText + '</a>';
         nav += '</div>';
         page.innerHTML = '<div class="nav navbar">' + nav + '<div style="clear: both;"></div>' + page.innerHTML;
@@ -94,7 +103,7 @@ function initGeoAlbum() {
     function setSidebar(page, idx) {
         var title = page.getElementsByTagName('h1');
         //console.log(title[0].innerHTML);
-        sidebarContent += '<a href="#' + idx + '">' + title[0].innerHTML + '</a> ';
+        sidebarContent += '<a href="#' + idx + '">' + TitleContent + '</a> ';
     }
 
     function zoomOnLayerGroup(map, layer) {
