@@ -141,7 +141,7 @@ function initGeoAlbum() {
     footer = document.getElementById('footer');
     footerContent = '<section>Storymap by <a target="_blank" href="https://www.laura-lou.com">LauraLou</a></section>';
     footerContent += '<section>Storymap-Plugin by <a href="https://github.com/Zverik/geoalbum" target="_blank">Zverik (Geoalbum)</a></section>';
-    footerContent += '<section><a href="#" data-featherlight="src/LeafletPlugins.html" >Weitere Plugins</a></section>';
+    footerContent += '<section><a href="#" data-featherlight="src/LeafletPlugins.html" >Information</a></section>';
     footer.innerHTML = footerContent;
 
     content = document.getElementById('content');
