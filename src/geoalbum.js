@@ -130,7 +130,8 @@ function initGeoAlbum() {
     //console.log("p: " + p + ". pages: " + pages);
     // body.innerHTML = '<div id="content"></div><div id="maps"><div id="overviewmap"></div><div id="detailmap"></div></div>';
     body.innerHTML = '';
-    //body.innerHTML += '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
+    // body.innerHTML += '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
+    body.innerHTML += '<div class="topnav" id="nav"><section class="title">Falco & Laura´s Travel Blog</section><img src="img/paperplane.png" style="max-height:45px; paddint-top:5px;" /></div>';
     body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div><div id="footer"></div></div>';
 
     footer = document.getElementById('footer');
