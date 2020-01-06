@@ -133,8 +133,12 @@ function initGeoAlbum() {
     // body.innerHTML += '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
     var bodyContent = '';
     bodyContent += '<div id="container">';
-    bodyContent += '<div class="topnav" id="nav"><section class="title">Falco & Laura´s Travel Blog</section><img src="img/paperplane.png" style="max-height:45px; padding-top:5px;" /></div>';
-    bodyContent += '<div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div><div id="footer"></div>'
+    bodyContent += '<div class="topnav" id="nav"><section class="title">Falco & Laura´s Travel Blog</section><img class="titleIMG" src="img/paperplane.png" style="max-height:45px; padding-top:5px;" />';
+    bodyContent += '<a href="javascript:void(0);" class="icon" onclick="responsiveSidebar()"><i class="fa fa-align-left"></i></a></div>';
+    bodyContent += '<div id="content"></div>';
+    bodyContent += '<div id="maps"><div id="overviewmap"></div></div>';
+    bodyContent += '<div id="sidebar" class="ContentSidebar">' + sidebarContent + '</div>';
+    bodyContent += '<div id="footer"></div>'
     bodyContent += '</div>';
     body.innerHTML = bodyContent;
 
@@ -231,6 +235,9 @@ function initGeoAlbum() {
             this.$instance.find('.caption').remove();
             $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
         };
+
+
+        //////////////////////////////////
 
 
     }();
