@@ -148,7 +148,7 @@ function initGeoAlbum() {
     content.appendChild(document.createComment(''));
 
     var overviewMap = L.map('overviewmap', { keyboard: false, attributionControl: false }).setView([51.08342, 10.423447], overviewZoom);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 22,

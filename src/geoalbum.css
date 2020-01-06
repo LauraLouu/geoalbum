@@ -8,7 +8,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 10pt;
-    font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
 .storyContent h2,
 .storyContent h3,
 .storyContent h4 {
-    font-family: 'Girassol', cursive;
+    font-family: 'Ovo', serif;
 }
 
 img {
@@ -107,7 +107,7 @@ img {
 .contentPage a {
     color: #0b6f32;
     text-decoration: none;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
 }
 
@@ -169,7 +169,7 @@ img {
 }
 
 #sidebar h1 {
-    font-family: 'Girassol', cursive;
+    font-family: 'Ovo', serif;
     margin-top: 0;
 }
 
@@ -247,7 +247,7 @@ img {
 
 .nav h1 {
     text-align: center;
-    font-family: 'Girassol', cursive;
+    font-family: 'Ovo', serif;
 }
 
 .nav h1:after {
@@ -311,7 +311,7 @@ img {
 .title {
     padding: 14px 16px;
     font-size: 17px;
-    font-family: 'Girassol', cursive;
+    font-family: 'Ovo', serif;
     float: left;
 }
 
@@ -335,7 +335,7 @@ img {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    font-family: 'Girassol', cursive;
+    font-family: 'Ovo', sans-serif;
 }
 
 
