@@ -131,8 +131,12 @@ function initGeoAlbum() {
     // body.innerHTML = '<div id="content"></div><div id="maps"><div id="overviewmap"></div><div id="detailmap"></div></div>';
     body.innerHTML = '';
     // body.innerHTML += '<div class="topnav" id="nav"><a id="info" href="#Info"><b>Info</b></a><a id="news" href="#News"><b>News</b></a></div>';
-    body.innerHTML += '<div class="topnav" id="nav"><section class="title">Falco & Laura´s Travel Blog</section><img src="img/paperplane.png" style="max-height:45px; paddint-top:5px;" /></div>';
-    body.innerHTML += '<div id="container"><div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div><div id="footer"></div></div>';
+    var bodyContent = '';
+    bodyContent += '<div id="container">';
+    bodyContent += '<div class="topnav" id="nav"><section class="title">Falco & Laura´s Travel Blog</section><img src="img/paperplane.png" style="max-height:45px; padding-top:5px;" /></div>';
+    bodyContent += '<div id="content"></div><div id="maps"><div id="overviewmap"></div></div><div id="sidebar">' + sidebarContent + '</div><div id="footer"></div>'
+    bodyContent += '</div>';
+    body.innerHTML = bodyContent;
 
     footer = document.getElementById('footer');
     footerContent = '<section>Storymap by <a target="_blank" href="https://www.laura-lou.com">LauraLou</a></section>';
@@ -227,6 +231,8 @@ function initGeoAlbum() {
             this.$instance.find('.caption').remove();
             $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
         };
+
+
     }();
 
     document.onkeydown = function(e) {
