@@ -1,4 +1,4 @@
-/*https://coolors.co/0b6f32-eae9e3-a3b18a-6e4178-588157*/
+/*https://coolors.co/0b6f32-fbf8f3-a3b18a-6e4178-588157*/
 
 html,
 body {
@@ -54,7 +54,7 @@ img {
     padding: 5px 10px;
     color: #000;
     border-radius: 5px;
-    background-color: #eae9e3;
+    background-color: #fbf8f3;
     line-height: 20pt;
     border: 1px solid #ddd;
 }
@@ -78,7 +78,7 @@ img {
     display: grid;
     grid-template-rows: 25% 1fr 1fr;
     grid-template-columns: 160px 1fr 1fr;
-    grid-template-areas: "headerIMG navbar navbar" "headerIMG story story" "galleryIMG galleryIMG galleryImage";
+    grid-template-areas: "headerIMG navbar navbar" "headerIMG story story" "galleryIMG galleryIMG galleryIMG";
     padding: 0;
     margin: 0 0 0 20px;
 }
@@ -135,6 +135,7 @@ img {
 .galleryImages {
     margin-top: 30px;
     grid-area: galleryIMG;
+    text-align: center;
 }
 
 #maps {
@@ -146,7 +147,7 @@ img {
 
 #sidebar {
     grid-area: sidebar;
-    background-color: #eae9e3;
+    background-color: #fbf8f3;
     padding: 20px;
     border-radius: 0 0 0 5px;
     border-bottom: 1px solid #ddd;
@@ -176,7 +177,7 @@ img {
 .navbar {
     grid-area: navbar;
     position: relative;
-    margin: 0 30px;
+    margin: 15px 30px;
 }
 
 #detailmap {
@@ -213,12 +214,12 @@ img {
     padding: 5px 15px;
     border-radius: 50%;
     border: 1px solid #ddd;
-    background: #eae9e3;
+    background: #fbf8f3;
 }
 
 .nav a:hover {
     background-color: #6e4178;
-    color: #eae9e3;
+    color: #fbf8f3;
     text-decoration: none;
     border: 0;
 }
@@ -274,7 +275,7 @@ img {
     margin: 5px auto;
     padding: 5px 15px 5px 5px;
     border-radius: 5px;
-    background-color: #eae9e3;
+    background-color: #fbf8f3;
     line-height: 20pt;
     border: 1px solid #ddd;
     display: inline-block;
@@ -315,7 +316,7 @@ img {
 /* Top Navigation*/
 
 .topnav {
-    background-color: #eae9e3;
+    background-color: #fbf8f3;
     overflow: hidden;
     border-bottom: solid 1px #ccc;
 }
