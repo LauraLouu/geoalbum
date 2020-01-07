@@ -135,7 +135,6 @@ img {
 .galleryImages {
     margin-top: 30px;
     grid-area: galleryIMG;
-    text-align: center;
 }
 
 #maps {
@@ -453,6 +452,9 @@ img {
     }
     #sidebar .closebtn {
         display: block;
+    }
+    .galleryImages {
+        text-align: center;
     }
 }
 
