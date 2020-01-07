@@ -365,6 +365,20 @@ img {
     display: none;
 }
 
+#sidebar .closebtn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background: none;
+}
+
+.sidebarIMG {
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
     #container {
         grid-template-columns: 25% 25% 25% 25%;
@@ -421,6 +435,25 @@ img {
         grid-template-columns: 100%;
         grid-template-areas: "nav" "header" "content" "footer";
     }
+    #sidebar {
+        grid-area: unset;
+        background-color: #fbf8f3;
+        padding: 20px;
+        border-radius: 0 0 0 5px;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: -300px;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    #sidebar .closebtn {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -448,6 +481,9 @@ img {
 @media screen and (max-width: 550px) {
     .titleIMG {
         display: none;
+    }
+    .sidebarIMG {
+        display: block;
     }
 }
 

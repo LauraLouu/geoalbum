@@ -137,7 +137,7 @@ function initGeoAlbum() {
     bodyContent += '<a href="javascript:void(0);" class="icon" onclick="responsiveSidebar()"><i class="fa fa-align-left"></i></a></div>';
     bodyContent += '<div id="content"></div>';
     bodyContent += '<div id="maps"><div id="overviewmap"></div></div>';
-    bodyContent += '<div id="sidebar" class="ContentSidebar">' + sidebarContent + '</div>';
+    bodyContent += '<div id="sidebar" class="ContentSidebar"><a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>' + sidebarContent + '<img class="sidebarIMG" src="img/paperplane.png" style="max-height:45px; padding-top:5px;" /></div>';
     bodyContent += '<div id="footer"></div>'
     bodyContent += '</div>';
     body.innerHTML = bodyContent;
@@ -235,6 +235,7 @@ function initGeoAlbum() {
             this.$instance.find('.caption').remove();
             $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
         };
+
 
 
         //////////////////////////////////
