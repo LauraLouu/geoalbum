@@ -43,7 +43,7 @@
 
 <body>
 
-    <div class="contentPage">
+    <!--div class="contentPage">
         <div class="headerImage" lat="51.049329" lon="13.738144">
             <div class="storyImg">
                 <a data-featherlight href="https://dummyimage.com/300/09f/fff.png"><img src="https://dummyimage.com/300/09f/fff.png" alt="first image"></a>
@@ -77,7 +77,7 @@
                     Open second slide (YouTube)
                     </a>
         </div>
-    </div>
+    </!--div>
 
     <div class="contentPage">
         <div class="headerImage" lat="50.991788" lon="14.651">
@@ -215,7 +215,7 @@
             <a class="gallery3" href="https://dummyimage.com/1024x720/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="second image"></a>
             <a class="gallery3" href="https://dummyimage.com/1024x720/09f/fff.png"><img src="https://dummyimage.com/100/09f/fff.png" alt="third image"></a>
         </div>
-    </div>
+    </div-->
 
 
 

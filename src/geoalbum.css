@@ -1,4 +1,4 @@
-/*https://coolors.co/0b6f32-fbf8f3-a3b18a-6e4178-588157*/
+/*https://coolors.co/0b6f32-FDFBF9-a3b18a-6e4178-588157*/
 
 html,
 body {
@@ -54,7 +54,7 @@ img {
     padding: 5px 10px;
     color: #000;
     border-radius: 5px;
-    background-color: #fbf8f3;
+    background-color: #FDFBF9; 
     line-height: 20pt;
     border: 1px solid #ddd;
 }
@@ -146,7 +146,7 @@ img {
 
 #sidebar {
     grid-area: sidebar;
-    background-color: #fbf8f3;
+    background-color: #FDFBF9;
     padding: 20px;
     border-radius: 0 0 0 5px;
     border-bottom: 1px solid #ddd;
@@ -213,12 +213,12 @@ img {
     padding: 5px 15px;
     border-radius: 50%;
     border: 1px solid #ddd;
-    background: #fbf8f3;
+    background: #FDFBF9;
 }
 
 .nav a:hover {
     background-color: #6e4178;
-    color: #fbf8f3;
+    color: #FDFBF9;
     text-decoration: none;
     border: 0;
 }
@@ -274,7 +274,7 @@ img {
     margin: 5px auto;
     padding: 5px 15px 5px 5px;
     border-radius: 5px;
-    background-color: #fbf8f3;
+    background-color: #FDFBF9;
     line-height: 20pt;
     border: 1px solid #ddd;
     display: inline-block;
@@ -315,7 +315,7 @@ img {
 /* Top Navigation*/
 
 .topnav {
-    background-color: #fbf8f3;
+    background-color: #FDFBF9;
     overflow: hidden;
     border-bottom: solid 1px #ccc;
 }
@@ -436,7 +436,7 @@ img {
     }
     #sidebar {
         grid-area: unset;
-        background-color: #fbf8f3;
+        background-color: #FDFBF9;
         padding: 20px;
         border-radius: 0 0 0 5px;
         border-bottom: 1px solid #ddd;
