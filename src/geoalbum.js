@@ -119,10 +119,14 @@ function initGeoAlbum() {
             map.panTo([clat / ccount, clon / ccount]);
     }
 
+    ////////// hier ersetzen durch die posts
     for (var d, count = 0; d = body.firstChild;) {
         if (d.nodeType == 1 && d.localName != 'script') pages[++count] = d;
         body.removeChild(d);
     }
+
+
+    /// hier normal lassen
     for (var p in pages) {
         process(pages[p], p);
         setSidebar(pages[p], p);
